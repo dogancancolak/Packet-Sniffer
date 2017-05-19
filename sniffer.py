@@ -23,7 +23,7 @@ def eth_addr (a) :
 #create a AF_PACKET type raw socket (thats basically packet level)
 #define ETH_P_ALL    0x0003          /* Every packet (be careful!!!) */
 try:
-    s = socket.socket( socket.AF_PACKET , socket.SOCK_RAW , socket.ntohs(0x0003))
+    s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(0x0003))
 except (socket.error, msg):
     print ('Socket could not be created. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
     sys.exit()
