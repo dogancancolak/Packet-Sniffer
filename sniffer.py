@@ -1,10 +1,18 @@
 # Packet sniffer in python
 # For Linux - Sniffs all incoming and outgoing packets
 
-import socket, sys
+import socket, sys, time
 from struct import *
+
+def elapsed_time():
+    print('Elapsed Time : ' + str(time.time()-start_time))
+
 packet_counter = 0
 tcp_counter = 0
+start_time = time.time()
+import atexit
+atexit.register(elapsed_time)
+
 
 # Convert a string of 6 characters of ethernet address into a dash separated hex string
 def eth_addr(a):
